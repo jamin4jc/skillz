@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170314205025) do
+ActiveRecord::Schema.define(version: 20170314220532) do
 
   create_table "entries", force: :cascade do |t|
     t.string   "name"
@@ -18,6 +18,13 @@ ActiveRecord::Schema.define(version: 20170314205025) do
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.index ["name"], name: "index_entries_on_name"
+  end
+
+  create_table "links", force: :cascade do |t|
+    t.string   "uri"
+    t.integer  "entry_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end
